@@ -22,7 +22,6 @@ class UMGTEST_API UMockList : public UFriendListSubsystem
 public:
 	UMockList();
 	virtual void Initialize(FSubsystemCollectionBase& Collection) override;
-	virtual void Deinitialize() override;
 
 	virtual TArray<FPlayerData> GetFriendList() const override { return FriendList; }
 	

@@ -11,6 +11,7 @@ void UMockList::UpdateRandomFriend()
 	FPlayerData* Friend = &FriendList[FMath::RandRange(0, FriendList.Num() - 1)];
 	if (Friend)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Changing state of %s"), *Friend->PlayerNickname)
 		// update the friend status
 		Friend->bStatus = !Friend->bStatus;
 		OnFriendUpdate.Broadcast(*Friend);
@@ -42,10 +43,8 @@ UMockList::UMockList()
 
 void UMockList::Initialize(FSubsystemCollectionBase& Collection)
 {
+	Super::Initialize(Collection);
 	FTimerHandle TimerHandle;
 	GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &UMockList::UpdateRandomFriend, FMath::FRandRange(5., 15.), true);
 }
 
-void UMockList::Deinitialize()
-{
-}

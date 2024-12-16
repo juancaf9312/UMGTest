@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Blueprint/UserWidget.h"
+#include "CommonActivatableWidget.h"
 #include "UFriendListWidget.generated.h"
 
 class UListView;
@@ -12,7 +12,7 @@ struct FPlayerData;
  * 
  */
 UCLASS()
-class UMGTEST_API UUFriendListWidget : public UUserWidget
+class UMGTEST_API UUFriendListWidget : public UCommonActivatableWidget
 {
 	GENERATED_BODY()
 	
