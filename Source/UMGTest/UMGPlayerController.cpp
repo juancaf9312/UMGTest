@@ -3,6 +3,7 @@
 
 #include "UMGPlayerController.h"
 #include "Blueprint/UserWidget.h"
+#include "UMGGameInstance.h"
 
 void AUMGPlayerController::BeginPlay()
 {

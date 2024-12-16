@@ -7,7 +7,7 @@
 #include "UFriendListWidget.generated.h"
 
 class UListView;
-
+struct FPlayerData;
 /**
  * 
  */
@@ -24,4 +24,10 @@ class UMGTEST_API UUFriendListWidget : public UUserWidget
 
 protected:
 	virtual bool Initialize() override;
+
+public:
+	UFUNCTION(BlueprintNativeEvent)
+	void onFriendUpdate(const FPlayerData& Player);
+
+	void onFriendUpdate_Implementation(const FPlayerData& Player);
 };
