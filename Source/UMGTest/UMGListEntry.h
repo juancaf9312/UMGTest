@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Blueprint/UserWidget.h"
+#include "CommonActivatableWidget.h"
 #include "Blueprint/IUserObjectListEntry.h"
 #include "UMGListEntry.generated.h"
 
@@ -11,9 +11,13 @@
  * 
  */
 UCLASS()
-class UMGTEST_API UUMGListEntry : public UUserWidget, public IUserObjectListEntry
+class UMGTEST_API UUMGListEntry : public UCommonActivatableWidget, public IUserObjectListEntry
 {
 	GENERATED_BODY()
+
+	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	FString Description;
+
 public:
 	UPROPERTY(meta = (BindWidget))
 	class UTextBlock* Field;

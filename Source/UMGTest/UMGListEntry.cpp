@@ -11,5 +11,7 @@ void UUMGListEntry::NativeOnListItemObjectSet(UObject* ListItemObject)
 	if (Data)
 	{
 		Field->SetText(FText::FromString(Data->Data.PlayerNickname));
+
+		Description = FString::Format(TEXT("Level: {0}\nStatus: {1}\nDescription:"), { Data->Data.PlayerLevel, (Data->Data.bStatus?"Connected" : "Disconnected")});
 	}
 }
